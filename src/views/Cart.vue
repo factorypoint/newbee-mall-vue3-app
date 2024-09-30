@@ -56,7 +56,7 @@
       button-type="primary"
       @submit="onSubmit"
     >
-      <van-checkbox @click="allCheck" v-model:checked="state.checkAll">全选</van-checkbox>
+      <van-checkbox @click="allCheck" v-model:checked="state.checkAll">Select all</van-checkbox>
     </van-submit-bar>
     <div class="empty" v-if="!state.list.length">
       <img class="empty-cart" src="https://s.yezgea02.com/1604028375097/empty-car.png" alt="Cart is empty">
