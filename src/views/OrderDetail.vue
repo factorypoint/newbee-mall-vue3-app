@@ -24,14 +24,14 @@
         <label>下单时间：</label>
         <span>{{ state.detail.createTime }}</span>
       </div>
-      <van-button v-if="state.detail.orderStatus == 3" style="margin-bottom: 10px" color="#1baeae" block @click="handleConfirmOrder(state.detail.orderNo)">确认收货</van-button>
-      <van-button v-if="state.detail.orderStatus == 0" style="margin-bottom: 10px" color="#1baeae" block @click="showPayFn">去支付</van-button>
+      <van-button v-if="state.detail.orderStatus == 3" style="margin-bottom: 10px" color="#80B9E4" block @click="handleConfirmOrder(state.detail.orderNo)">确认收货</van-button>
+      <van-button v-if="state.detail.orderStatus == 0" style="margin-bottom: 10px" color="#80B9E4" block @click="showPayFn">去支付</van-button>
       <van-button v-if="!(state.detail.orderStatus < 0 || state.detail.orderStatus == 4)" block @click="handleCancelOrder(state.detail.orderNo)">取消订单</van-button>
     </div>
     <div class="order-price">
       <div class="price-item">
         <label>商品金额：</label>
-        <span>¥ {{ state.detail.totalPrice }}</span>
+        <span>€ {{ state.detail.totalPrice }}</span>
       </div>
       <div class="price-item">
         <label>配送方式：</label>

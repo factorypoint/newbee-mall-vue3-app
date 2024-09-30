@@ -23,7 +23,7 @@
                 <span>x{{ item.goodsCount }}</span>
               </div>
               <div class="good-btn">
-                <div class="price">¥{{ item.sellingPrice }}</div>
+                <div class="price">€{{ item.sellingPrice }}</div>
                 <van-stepper
                   integer
                   :min="1"
@@ -61,7 +61,7 @@
     <div class="empty" v-if="!state.list.length">
       <img class="empty-cart" src="https://s.yezgea02.com/1604028375097/empty-car.png" alt="空购物车">
       <div class="title">购物车空空如也</div>
-      <van-button round color="#1baeae" type="primary" @click="goTo" block>前往选购</van-button>
+      <van-button round color="#80B9E4" type="primary" @click="goTo" block>前往选购</van-button>
     </div>
     <nav-bar></nav-bar>
   </div>

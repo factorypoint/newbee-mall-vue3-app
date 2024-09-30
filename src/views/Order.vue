@@ -11,7 +11,7 @@
 <template>
   <div class="order-box">
     <s-header :name="'我的订单'" :back="'/user'"></s-header>
-    <van-tabs @click-tab="onChangeTab" :color="'#1baeae'" :title-active-color="'#1baeae'" class="order-tab" v-model="state.status">
+    <van-tabs @click-tab="onChangeTab" :color="'#80B9E4'" :title-active-color="'#80B9E4'" class="order-tab" v-model="state.status">
       <van-tab title="全部" name=''></van-tab>
       <van-tab title="待付款" name="0"></van-tab>
       <van-tab title="待确认" name="1"></van-tab>

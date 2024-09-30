@@ -22,6 +22,7 @@
         <van-icon name="manager-o" />
       </router-link>
     </header>
+    
     <nav-bar />
     <swiper :list="state.swiperList"></swiper>
     <div class="category-list">
@@ -38,7 +39,7 @@
             <img :src="$filters.prefix(item.goodsCoverImg)" alt="">
             <div class="good-desc">
               <div class="title">{{ item.goodsName }}</div>
-              <div class="price">¥ {{ item.sellingPrice }}</div>
+              <div class="price">€ {{ item.sellingPrice }}</div>
             </div>
           </div>
         </div>
@@ -52,7 +53,7 @@
             <img :src="$filters.prefix(item.goodsCoverImg)" alt="">
             <div class="good-desc">
               <div class="title">{{ item.goodsName }}</div>
-              <div class="price">¥ {{ item.sellingPrice }}</div>
+              <div class="price">€ {{ item.sellingPrice }}</div>
             </div>
           </div>
         </div>
@@ -66,7 +67,7 @@
             <img :src="$filters.prefix(item.goodsCoverImg)" alt="">
             <div class="good-desc">
               <div class="title">{{ item.goodsName }}</div>
-              <div class="price">¥ {{ item.sellingPrice }}</div>
+              <div class="price">€ {{ item.sellingPrice }}</div>
             </div>
           </div>
         </div>
@@ -211,9 +212,9 @@ const tips = () => {
           background: rgba(255, 255, 255, .7);
           border-radius: 20px;
           .app-name {
-              padding: 0 10px;
+              padding: 0 5px;
               color: @primary;
-              font-size: 20px;
+              font-size: 10px;
               font-weight: bold;
               border-right: 1px solid #666;
           }

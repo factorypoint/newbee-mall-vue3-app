@@ -13,7 +13,7 @@
     <s-header :name="'商品详情'"></s-header>
     <div class="detail-content">
       <div class="detail-swipe-wrap">
-        <van-swipe class="my-swipe" indicator-color="#1baeae">
+        <van-swipe class="my-swipe" indicator-color="#80B9E4">
           <van-swipe-item v-for="(item, index) in state.detail.goodsCarouselList" :key="index">
             <img :src="item" alt="">
           </van-swipe-item>
@@ -25,7 +25,7 @@
         </div>
         <div class="product-desc">免邮费 顺丰快递</div>
         <div class="product-price">
-          <span>¥{{ state.detail.sellingPrice || '' }}</span>
+          <span>€{{ state.detail.sellingPrice || '' }}</span>
           <!-- <span>库存203</span> -->
         </div>
       </div>
