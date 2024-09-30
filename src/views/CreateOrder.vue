@@ -10,7 +10,7 @@
 
 <template>
   <div class="create-order">
-    <s-header :name="'生成订单'" @callback="deleteLocal"></s-header>
+    <s-header :name="'Create order'" @callback="deleteLocal"></s-header>
     <div class="address-wrap">
       <div class="name" @click="goTo">
         <span>{{ state.address.userName }} </span>
@@ -37,10 +37,10 @@
     </div>
     <div class="pay-wrap">
       <div class="price">
-        <span>商品金额</span>
-        <span>¥{{ total }}</span>
+        <span>Price tag</span>
+        <span>{{ total }}€</span>
       </div>
-      <van-button @click="handleCreateOrder" class="pay-btn" color="#1baeae" type="primary" block>生成订单</van-button>
+      <van-button @click="handleCreateOrder" class="pay-btn" color="#1baeae" type="primary" block>Create order</van-button>
     </div>
     <van-popup
       closeable
@@ -51,8 +51,8 @@
       @close="close"
     >
       <div :style="{ width: '90%', margin: '0 auto', padding: '50px 0' }">
-        <van-button :style="{ marginBottom: '10px' }" color="#1989fa" block @click="handlePayOrder(1)">支付宝支付</van-button>
-        <van-button color="#4fc08d" block @click="handlePayOrder(2)">微信支付</van-button>
+        <van-button :style="{ marginBottom: '10px' }" color="#1989fa" block @click="handlePayOrder(1)">AliPay</van-button>
+        <van-button color="#4fc08d" block @click="handlePayOrder(2)">WeChatPay</van-button>
       </div>
     </van-popup>
   </div>
@@ -122,7 +122,7 @@ const close = () => {
 
 const handlePayOrder = async (type) => {
   await payOrder({ orderNo: state.orderNo, payType: type })
-  showSuccessToast('支付成功')
+  showSuccessToast('Payment succesful')
   setTimeout(() => {
     router.push({ path: '/order' })
   }, 2000)

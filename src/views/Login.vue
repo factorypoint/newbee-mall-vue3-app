@@ -10,30 +10,30 @@
 
 <template>
   <div class="login">
-    <s-header :name="type == 'login' ? '登录' : '注册'" :back="'/home'"></s-header>
+    <s-header :name="type == 'login' ? 'Login' : 'Register'" :back="'/home'"></s-header>
     <img class="logo" src="https://s.yezgea02.com/1604045825972/newbee-mall-vue3-app-logo.png" alt="">
     <div v-if="state.type == 'login'" class="login-body login">
       <van-form @submit="onSubmit">
         <van-field
           v-model="state.username"
           name="username"
-          label="用户名"
-          placeholder="用户名"
-          :rules="[{ required: true, message: '请填写用户名' }]"
+          label="username"
+          placeholder="username"
+          :rules="[{ required: true, message: 'Enter a username' }]"
         />
         <van-field
           v-model="state.password"
           type="password"
           name="password"
-          label="密码"
-          placeholder="密码"
-          :rules="[{ required: true, message: '请填写密码' }]"
+          label="password"
+          placeholder="password"
+          :rules="[{ required: true, message: 'Enter a password' }]"
         />
         <van-field
           center
           clearable
-          label="验证码"
-          placeholder="输入验证码"
+          label="verification code"
+          placeholder="Enter verification code"
           v-model="state.verify"
         >
           <template #button>
@@ -41,8 +41,8 @@
           </template>
         </van-field>
         <div style="margin: 16px;">
-          <div class="link-register" @click="toggle('register')">立即注册</div>
-          <van-button round block color="#1baeae" native-type="submit">登录</van-button>
+          <div class="link-register" @click="toggle('register')">Register now</div>
+          <van-button round block color="#1baeae" native-type="submit">Register</van-button>
         </div>
       </van-form>
     </div>
@@ -51,23 +51,23 @@
         <van-field
           v-model="state.username1"
           name="username1"
-          label="用户名"
-          placeholder="用户名"
-          :rules="[{ required: true, message: '请填写用户名' }]"
+          label="username"
+          placeholder="username"
+          :rules="[{ required: true, message: 'Enter a username' }]"
         />
         <van-field
           v-model="state.password1"
           type="password"
           name="password1"
-          label="密码"
-          placeholder="密码"
-          :rules="[{ required: true, message: '请填写密码' }]"
+          label="password"
+          placeholder="password"
+          :rules="[{ required: true, message: 'Enter a password' }]"
         />
         <van-field
           center
           clearable
-          label="验证码"
-          placeholder="输入验证码"
+          label="verification code"
+          placeholder="Enter verification code"
           v-model="state.verify"
         >
           <template #button>
@@ -75,8 +75,8 @@
           </template>
         </van-field>
         <div style="margin: 16px;">
-          <div class="link-login" @click="toggle('login')">已有登录账号</div>
-          <van-button round block color="#1baeae" native-type="submit">注册</van-button>
+          <div class="link-login" @click="toggle('login')">Login</div>
+          <van-button round block color="#1baeae" native-type="submit">Register</van-button>
         </div>
       </van-form>
     </div>
@@ -112,7 +112,7 @@ const toggle = (v) => {
 const onSubmit = async (values) => {
   state.imgCode = verifyRef.value.state.imgCode || ''
   if (state.verify.toLowerCase() != state.imgCode.toLowerCase()) {
-    showFailToast('验证码有误')
+    showFailToast('verification code有误')
     return
   }
   if (state.type == 'login') {
@@ -128,7 +128,7 @@ const onSubmit = async (values) => {
       "loginName": values.username1,
       "password": values.password1
     })
-    showSuccessToast('注册成功')
+    showSuccessToast('Login successful')
     state.type = 'login'
     state.verify = ''
   }

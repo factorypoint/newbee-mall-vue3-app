@@ -13,19 +13,19 @@
     <ul class="nav-list">
       <router-link  class="nav-list-item active" to="home">
         <i class="nbicon nblvsefenkaicankaoxianban-1"></i>
-        <span>首页</span>
+        <span>Home</span>
       </router-link>
       <router-link  class="nav-list-item" to="category">
         <i class="nbicon nbfenlei"></i>
-        <span>分类</span>
+        <span>Category</span>
       </router-link>
       <router-link  class="nav-list-item" to="cart">
         <i><van-icon  name="shopping-cart-o" :badge="!cart.count ? '' : cart.count" /></i>
-        <span>购物车</span>
+        <span>Cart</span>
       </router-link>
       <router-link  class="nav-list-item" to="user">
         <i class="nbicon nblvsefenkaicankaoxianban-"></i>
-        <span>我的</span>
+        <span>My account</span>
       </router-link>
     </ul>
   </div>

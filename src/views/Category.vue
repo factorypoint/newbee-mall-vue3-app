@@ -15,7 +15,7 @@
         <i class="nbicon nbfanhui" @click="goHome"></i>
         <div class="header-search">
           <i class="nbicon nbSearch"></i>
-          <router-link tag="span" class="search-title" to="./product-list?from=category">全场50元起步</router-link>
+          <router-link tag="span" class="search-title" to="./product-list?from=category">From 5€</router-link>
         </div>
         <i class="iconfont icon-More"></i>
       </header>
@@ -76,7 +76,7 @@ onMounted(async () => {
   let $screenHeight = document.documentElement.clientHeight
   console.log('searchWrap.value', searchWrap.value)
   searchWrap.value.style.height = $screenHeight - 100 + 'px'
-  showLoadingToast('加载中...')
+  showLoadingToast('Loading...')
   const { data } = await getCategory()
   closeToast()
   state.categoryData = data

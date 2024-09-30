@@ -10,7 +10,7 @@
 
 <template>
   <div class="product-detail">
-    <s-header :name="'商品详情'"></s-header>
+    <s-header :name="'Product details'"></s-header>
     <div class="detail-content">
       <div class="detail-swipe-wrap">
         <van-swipe class="my-swipe" indicator-color="#1baeae">
@@ -23,7 +23,7 @@
         <div class="product-title">
           {{ state.detail.goodsName || '' }}
         </div>
-        <div class="product-desc">免邮费 顺丰快递</div>
+        <div class="product-desc">Free delivery included</div>
         <div class="product-price">
           <span>¥{{ state.detail.sellingPrice || '' }}</span>
           <!-- <span>库存203</span> -->
@@ -31,19 +31,19 @@
       </div>
       <div class="product-intro">
         <ul>
-          <li>概述</li>
-          <li>参数</li>
-          <li>安装服务</li>
-          <li>常见问题</li>
+          <li>General description</li>
+          <li>Parameters</li>
+          <li>Installation service</li>
+          <li>FAQ</li>
         </ul>
         <div class="product-content" v-html="state.detail.goodsDetailContent || ''"></div>
       </div>
     </div>
     <van-action-bar>
-      <van-action-bar-icon icon="chat-o" text="客服" />
-      <van-action-bar-icon icon="cart-o" :badge="!cart.count ? '' : cart.count" @click="goTo()" text="购物车" />
-      <van-action-bar-button type="warning" @click="handleAddCart" text="加入购物车" />
-      <van-action-bar-button type="danger" @click="goToCart" text="立即购买" />
+      <van-action-bar-icon icon="chat-o" text="Customer service" />
+      <van-action-bar-icon icon="cart-o" :badge="!cart.count ? '' : cart.count" @click="goTo()" text="Cart" />
+      <van-action-bar-button type="warning" @click="handleAddCart" text="Add to cart" />
+      <van-action-bar-button type="danger" @click="goToCart" text="Pay now" />
     </van-action-bar>
   </div>
 </template>
@@ -91,7 +91,7 @@ const goTo = () => {
 
 const handleAddCart = async () => {
   const { resultCode } = await addCart({ goodsCount: 1, goodsId: state.detail.goodsId })
-  if (resultCode == 200 ) showSuccessToast('添加成功')
+  if (resultCode == 200 ) showSuccessToast('Added succesfully')
   cart.updateCart()
 }
 

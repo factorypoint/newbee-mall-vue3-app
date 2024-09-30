@@ -9,13 +9,13 @@
 -->
 <template>
   <div class="address-box">
-    <s-header :name="'地址管理'" :back="state.from == 'create-order' ? '' : '/user'"></s-header>
+    <s-header :name="'Addresses'" :back="state.from == 'create-order' ? '' : '/user'"></s-header>
     <div class="address-item">
       <van-address-list
         v-if="state.from != 'mine'"
         v-model="state.chosenAddressId"
         :list="state.list"
-        default-tag-text="默认"
+        default-tag-text="Confirm"
         @add="onAdd"
         @edit="onEdit"
         @select="select"
@@ -24,7 +24,7 @@
         v-else
         v-model="state.chosenAddressId"
         :list="state.list"
-        default-tag-text="默认"
+        default-tag-text="Confirm"
         @add="onAdd"
         @edit="onEdit"
       />

@@ -10,32 +10,32 @@
 
 <template>
   <div class="order-detail-box">
-    <s-header :name="'订单详情'" @callback="close"></s-header>
+    <s-header :name="'Order details'" @callback="close"></s-header>
     <div class="order-status">
       <div class="status-item">
-        <label>订单状态：</label>
+        <label>Order status: </label>
         <span>{{ state.detail.orderStatusString }}</span>
       </div>
       <div class="status-item">
-        <label>订单编号：</label>
+        <label>Order number: </label>
         <span>{{ state.detail.orderNo }}</span>
       </div>
       <div class="status-item">
-        <label>下单时间：</label>
+        <label>Hour of order: </label>
         <span>{{ state.detail.createTime }}</span>
       </div>
-      <van-button v-if="state.detail.orderStatus == 3" style="margin-bottom: 10px" color="#1baeae" block @click="handleConfirmOrder(state.detail.orderNo)">确认收货</van-button>
-      <van-button v-if="state.detail.orderStatus == 0" style="margin-bottom: 10px" color="#1baeae" block @click="showPayFn">去支付</van-button>
-      <van-button v-if="!(state.detail.orderStatus < 0 || state.detail.orderStatus == 4)" block @click="handleCancelOrder(state.detail.orderNo)">取消订单</van-button>
+      <van-button v-if="state.detail.orderStatus == 3" style="margin-bottom: 10px" color="#1baeae" block @click="handleConfirmOrder(state.detail.orderNo)">Confirm order</van-button>
+      <van-button v-if="state.detail.orderStatus == 0" style="margin-bottom: 10px" color="#1baeae" block @click="showPayFn">Go to pay</van-button>
+      <van-button v-if="!(state.detail.orderStatus < 0 || state.detail.orderStatus == 4)" block @click="handleCancelOrder(state.detail.orderNo)">Cancel order</van-button>
     </div>
     <div class="order-price">
       <div class="price-item">
-        <label>商品金额：</label>
-        <span>¥ {{ state.detail.totalPrice }}</span>
+        <label>Item price: </label>
+        <span>{{ state.detail.totalPrice }}€</span>
       </div>
       <div class="price-item">
-        <label>配送方式：</label>
-        <span>普通快递</span>
+        <label>Delivery method: </label>
+        <span>Standard express delivery</span>
       </div>
     </div>
     <van-card
@@ -44,7 +44,7 @@
       style="background: #fff"
       :num="item.goodsCount"
       :price="item.sellingPrice"
-      desc="全场包邮"
+      desc="Delivery included"
       :title="item.goodsName"
       :thumb="$filters.prefix(item.goodsCoverImg)"
     />
@@ -54,8 +54,8 @@
       :style="{ height: '24%' }"
     >
       <div :style="{ width: '90%', margin: '0 auto', padding: '20px 0' }">
-        <van-button :style="{ marginBottom: '10px' }" color="#1989fa" block @click="handlePayOrder(state.detail.orderNo, 1)">支付宝支付</van-button>
-        <van-button color="#4fc08d" block @click="handlePayOrder(state.detail.orderNo, 2)">微信支付</van-button>
+        <van-button :style="{ marginBottom: '10px' }" color="#1989fa" block @click="handlePayOrder(state.detail.orderNo, 1)">AliPay</van-button>
+        <van-button color="#4fc08d" block @click="handlePayOrder(state.detail.orderNo, 2)">WeChatPay</van-button>
       </div>
     </van-popup>
   </div>
@@ -79,7 +79,7 @@ onMounted(() => {
 
 const init = async () => {
   showLoadingToast({
-    message: '加载中...',
+    message: 'Loading...',
     forbidClick: true
   });
   const { id } = route.query
@@ -90,11 +90,11 @@ const init = async () => {
 
 const handleCancelOrder = (id) => {
   showConfirmDialog({
-    title: '确认取消订单？',
+    title: 'Do you want to cancel the order?',
   }).then(() => {
     cancelOrder(id).then(res => {
       if (res.resultCode == 200) {
-        showSuccessToast('删除成功')
+        showSuccessToast('Deletion successful')
         init()
       }
     })
@@ -105,11 +105,11 @@ const handleCancelOrder = (id) => {
 
 const handleConfirmOrder = (id) => {
   showConfirmDialog({
-    title: '是否确认订单？',
+    title: 'Confirm order?',
   }).then(() => {
     confirmOrder(id).then(res => {
       if (res.resultCode == 200) {
-        showSuccessToast('确认成功')
+        showSuccessToast('Confirmation succesful')
         init()
       }
     })

@@ -10,7 +10,7 @@
 
 <template>
   <div class="cart-box">
-    <s-header :name="'购物车'" :noback="true"></s-header>
+    <s-header :name="'Cart'" :noback="true"></s-header>
     <div class="cart-body">
       <van-checkbox-group @change="groupChange" v-model="state.result" ref="checkboxGroup">
         <van-swipe-cell :right-width="50" v-for="(item, index) in state.list" :key="index">
@@ -52,16 +52,16 @@
       v-if="state.list.length > 0"
       class="submit-all van-hairline--top"
       :price="total * 100"
-      button-text="结算"
+      button-text="Checkout"
       button-type="primary"
       @submit="onSubmit"
     >
       <van-checkbox @click="allCheck" v-model:checked="state.checkAll">全选</van-checkbox>
     </van-submit-bar>
     <div class="empty" v-if="!state.list.length">
-      <img class="empty-cart" src="https://s.yezgea02.com/1604028375097/empty-car.png" alt="空购物车">
-      <div class="title">购物车空空如也</div>
-      <van-button round color="#1baeae" type="primary" @click="goTo" block>前往选购</van-button>
+      <img class="empty-cart" src="https://s.yezgea02.com/1604028375097/empty-car.png" alt="Cart is empty">
+      <div class="title">Empty cart</div>
+      <van-button round color="#1baeae" type="primary" @click="goTo" block>Check other items</van-button>
     </div>
     <nav-bar></nav-bar>
   </div>
@@ -91,7 +91,7 @@ onMounted(() => {
 })
 
 const init = async () => {
-  showLoadingToast({ message: '加载中...', forbidClick: true });
+  showLoadingToast({ message: 'Loading...', forbidClick: true });
   const { data } = await getCart({ pageNumber: 1 })
   state.list = data
   state.result = data.map(item => item.cartItemId)
@@ -117,11 +117,11 @@ const goTo = () => {
 
 const onChange = async (value, detail) => {
   if (value > 5) {
-    showFailToast('超出单个商品的最大购买数量')
+    showFailToast('Exceeded maximum purchasable capacity')
     return
   }
   if (value < 1) {
-    showFailToast('商品不得小于0')
+    showFailToast('Item can not be lower than 0')
     return
   }
   /**
@@ -130,7 +130,7 @@ const onChange = async (value, detail) => {
    * 那么就不再进行修改操作
   */
   if (state.list.find(item => item.cartItemId == detail.name)?.goodsCount == value) return
-  showLoadingToast({ message: '修改中...', forbidClick: true });
+  showLoadingToast({ message: 'Editing...', forbidClick: true });
   const params = {
     cartItemId: detail.name,
     goodsCount: value
@@ -150,7 +150,7 @@ const onChange = async (value, detail) => {
 
 const onSubmit = async () => {
   if (state.result.length == 0) {
-    showFailToast('请选择商品进行结算')
+    showFailToast('Choose products to checkout')
     return
   }
   const params = JSON.stringify(state.result)

@@ -10,7 +10,7 @@
 
 <template>
   <div class="address-edit-box">
-    <s-header :name="`${state.type == 'add' ? '新增地址' : '编辑地址'}`"></s-header>
+    <s-header :name="`${state.type == 'add' ? 'New address' : 'Edit address'}`"></s-header>
     <van-address-edit
       class="edit"
       :area-list="state.areaList"
@@ -19,7 +19,7 @@
       show-set-default
       show-search-result
       :search-result="state.searchResult"
-      :area-columns-placeholder="['请选择', '请选择', '请选择']"
+      :area-columns-placeholder="['Select', 'Select', 'Select']"
       @save="onSave"
       @delete="onDelete"
     />
@@ -114,7 +114,7 @@ const onSave = async (content) => {
     params['addressId'] = state.addressId
   }
   await state.type == 'add' ? addAddress(params) : EditAddress(params)
-  showToast('保存成功')
+  showToast('Saved successfully')
   setTimeout(() => {
     router.back()
   }, 1000)
@@ -122,7 +122,7 @@ const onSave = async (content) => {
 
 const onDelete = async () => {
   await DeleteAddress(state.addressId)
-  showToast('删除成功')
+  showToast('Deleted successfully')
   setTimeout(() => {
     router.back()
   }, 1000)

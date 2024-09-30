@@ -13,11 +13,11 @@
     <header class="home-header wrap" :class="{'active' : state.headerScroll}">
       <router-link tag="i" to="./category"><i class="nbicon nbmenu2"></i></router-link>
       <div class="header-search">
-        <span class="app-name">新蜂商城</span>
+        <span class="app-name">Factory Point</span>
         <i class="iconfont icon-search"></i>
-        <router-link tag="span" class="search-title" to="./product-list?from=home">山河无恙，人间皆安</router-link>
+        <router-link tag="span" class="search-title" to="./product-list?from=home">Factory Point</router-link>
       </div>
-      <router-link class="login" tag="span" to="./login" v-if="!state.isLogin">登录</router-link>
+      <router-link class="login" tag="span" to="./login" v-if="!state.isLogin">Login</router-link>
       <router-link class="login" tag="span" to="./user" v-else>
         <van-icon name="manager-o" />
       </router-link>
@@ -31,7 +31,7 @@
       </div>
     </div>
     <div class="good">
-      <header class="good-header">新品上线</header>
+      <header class="good-header">New products</header>
       <van-skeleton title :row="3" :loading="state.loading">
         <div class="good-box">
           <div class="good-item" v-for="item in state.newGoodses" :key="item.goodsId" @click="goToDetail(item)">
@@ -45,7 +45,7 @@
       </van-skeleton>
     </div>
     <div class="good">
-      <header class="good-header">热门商品</header>
+      <header class="good-header">Latest trends</header>
       <van-skeleton title :row="3" :loading="state.loading">
         <div class="good-box">
           <div class="good-item" v-for="item in state.hots" :key="item.goodsId" @click="goToDetail(item)">
@@ -59,14 +59,14 @@
       </van-skeleton>
     </div>
     <div class="good" :style="{ paddingBottom: '100px'}">
-      <header class="good-header">最新推荐</header>
+      <header class="good-header">Latest recommendations</header>
       <van-skeleton title :row="3" :loading="state.loading">
         <div class="good-box">
           <div class="good-item" v-for="item in state.recommends" :key="item.goodsId" @click="goToDetail(item)">
             <img :src="$filters.prefix(item.goodsCoverImg)" alt="">
             <div class="good-desc">
               <div class="title">{{ item.goodsName }}</div>
-              <div class="price">¥ {{ item.sellingPrice }}</div>
+              <div class="price">{{ item.sellingPrice }}€</div>
             </div>
           </div>
         </div>
@@ -95,43 +95,43 @@ const state = reactive({
   recommends: [],
   categoryList: [
     {
-      name: '新蜂超市',
+      name: 'Supermarket',
       imgUrl: 'https://s.yezgea02.com/1604041127880/%E8%B6%85%E5%B8%82%402x.png',
       categoryId: 100001
     }, {
-      name: '新蜂服饰',
+      name: 'Clothing',
       imgUrl: 'https://s.yezgea02.com/1604041127880/%E6%9C%8D%E9%A5%B0%402x.png',
       categoryId: 100003
     }, {
-      name: '全球购',
+      name: 'Global',
       imgUrl: 'https://s.yezgea02.com/1604041127880/%E5%85%A8%E7%90%83%E8%B4%AD%402x.png',
       categoryId: 100002
     }, {
-      name: '新蜂生鲜',
+      name: 'Fresh products',
       imgUrl: 'https://s.yezgea02.com/1604041127880/%E7%94%9F%E9%B2%9C%402x.png',
       categoryId: 100004
     }, {
-      name: '新蜂到家',
+      name: 'Delivery',
       imgUrl: 'https://s.yezgea02.com/1604041127880/%E5%88%B0%E5%AE%B6%402x.png',
       categoryId: 100005
     }, {
-      name: '充值缴费',
+      name: 'Charge and pay',
       imgUrl: 'https://s.yezgea02.com/1604041127880/%E5%85%85%E5%80%BC%402x.png',
       categoryId: 100006
     }, {
-      name: '9.9元拼',
+      name: 'From 9.99€',
       imgUrl: 'https://s.yezgea02.com/1604041127880/9.9%402x.png',
       categoryId: 100007
     }, {
-      name: '领劵',
+      name: 'Cupons',
       imgUrl: 'https://s.yezgea02.com/1604041127880/%E9%A2%86%E5%88%B8%402x.png',
       categoryId: 100008
     }, {
-      name: '省钱',
+      name: 'On sale',
       imgUrl: 'https://s.yezgea02.com/1604041127880/%E7%9C%81%E9%92%B1%402x.png',
       categoryId: 100009
     }, {
-      name: '全部',
+      name: 'All',
       imgUrl: 'https://s.yezgea02.com/1604041127880/%E5%85%A8%E9%83%A8%402x.png',
       categoryId: 100010
     }
@@ -146,7 +146,7 @@ onMounted(async () => {
     cart.updateCart()
   }
   showLoadingToast({
-    message: '加载中...',
+    message: 'Loading...',
     forbidClick: true
   });
   const { data } = await getHome()
@@ -170,7 +170,7 @@ const goToDetail = (item) => {
 }
 
 const tips = () => {
-  showToast('敬请期待');
+  showToast('Stay tuned');
 }
 </script>
 

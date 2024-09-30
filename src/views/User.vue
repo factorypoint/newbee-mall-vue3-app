@@ -10,34 +10,34 @@
 
 <template>
   <div class="user-box">
-    <s-header :name="'我的'"></s-header>
+    <s-header :name="'My account'"></s-header>
     <van-skeleton title :avatar="true" :row="3" :loading="state.loading">
       <div class="user-info">
         <div class="info">
           <img src="https://s.yezgea02.com/1604040746310/aaaddd.png"/>
           <div class="user-desc">
-            <span>昵称：{{ state.user.nickName }}</span>
-            <span>登录名：{{ state.user.loginName }}</span>
-            <span class="name">个性签名：{{ state.user.introduceSign }}</span>
+            <span>Nickname: {{ state.user.nickName }}</span>
+            <span>Username: {{ state.user.loginName }}</span>
+            <span class="name">Signature: {{ state.user.introduceSign }}</span>
           </div>
         </div>
       </div>
     </van-skeleton>
     <ul class="user-list">
       <li class="van-hairline--bottom" @click="goTo('/order')">
-        <span>我的订单</span>
+        <span>My orders</span>
         <van-icon name="arrow" />
       </li>
       <li class="van-hairline--bottom" @click="goTo('/setting')">
-        <span>账号管理</span>
+        <span>Managing account</span>
         <van-icon name="arrow" />
       </li>
       <li class="van-hairline--bottom" @click="goTo('/address', { from: 'mine' })">
-        <span>地址管理</span>
+        <span>Addresses</span>
         <van-icon name="arrow" />
       </li>
       <li @click="goTo('/about')">
-        <span>关于我们</span>
+        <span>About us</span>
         <van-icon name="arrow" />
       </li>
     </ul>
