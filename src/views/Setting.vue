@@ -56,7 +56,7 @@ const handleLogout = async () => {
   const { resultCode } = await logout()
   if (resultCode == 200) {
     setLocal('token', '')
-    window.location.href = '/home'
+    window.location.href = '/'
   }
 }
 </script>

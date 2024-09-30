@@ -165,10 +165,10 @@ const onSubmit = async (values) => {
     .verify-bar-area {
       margin-top: 24px;
       .verify-left-bar {
-        border-color: #1baeae;
+        border-color: #80B9E4;
       }
       .verify-move-block {
-        background-color: #1baeae;
+        background-color: #80B9E4;
         color: #fff;
       }
     }

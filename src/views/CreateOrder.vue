@@ -30,7 +30,7 @@
             <span>x{{ item.goodsCount }}</span>
           </div>
           <div class="good-btn">
-            <div class="price">¥{{ item.sellingPrice }}</div>
+            <div class="price">€{{ item.sellingPrice }}</div>
           </div>
         </div>
       </div>
@@ -40,7 +40,7 @@
         <span>Price tag</span>
         <span>{{ total }}€</span>
       </div>
-      <van-button @click="handleCreateOrder" class="pay-btn" color="#1baeae" type="primary" block>Create order</van-button>
+      <van-button @click="handleCreateOrder" class="pay-btn" color="#1baeae" type="primary" block>生成订单</van-button>
     </div>
     <van-popup
       closeable

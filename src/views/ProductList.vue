@@ -44,7 +44,7 @@
               <div class="product-info">
                 <p class="name">{{item.goodsName}}</p>
                 <p class="subtitle">{{item.goodsIntro}}</p>
-                <span class="price">￥ {{item.sellingPrice}}</span>
+                <span class="price">€ {{item.sellingPrice}}</span>
               </div>
             </div>
           </template>
@@ -229,10 +229,12 @@ const changeTab = ({ name }) => {
             width: 100%;
             max-height: 20px;
             padding: 10px 0;
-            line-height: 25px;
+            line-height: 5px;
             font-size: 13px;
             color: #999;
             overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
           }
           .price {
             color: @primary;
