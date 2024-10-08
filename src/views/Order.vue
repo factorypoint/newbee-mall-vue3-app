@@ -11,7 +11,7 @@
 <template>
   <div class="order-box">
     <s-header :name="'我的订单'" :back="'/user'"></s-header>
-    <van-tabs @click-tab="onChangeTab" :color="'#80B9E4'" :title-active-color="'#80B9E4'" class="order-tab" v-model="state.status">
+    <van-tabs @click-tab="onChangeTab" :color="'#80B9E4'" :title-active-color="'#80B9E4'" class="order-tab" v-model="state.status" style="max-width: 600px; margin: 0 auto;">
       <van-tab title="全部" name=''></van-tab>
       <van-tab title="待付款" name="0"></van-tab>
       <van-tab title="待确认" name="1"></van-tab>
@@ -116,7 +116,6 @@ const onRefresh = () => {
     .order-header {
       position: fixed;
       top: 0;
-      left: 0;
       z-index: 10000;
       .fj();
       .wh(100%, 44px);
@@ -132,7 +131,6 @@ const onRefresh = () => {
     }
     .order-tab {
       position: fixed;
-      left: 0;
       z-index: 1000;
       width: 100%;
       border-bottom: 1px solid #e9e9e9;

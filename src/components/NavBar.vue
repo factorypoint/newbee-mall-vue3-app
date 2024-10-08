@@ -9,7 +9,7 @@
 -->
 
 <template >
-  <div class="nav-bar van-hairline--top">
+  <div class="nav-bar van-hairline--top" style="max-width: 600px; margin: 0 auto;">
     <ul class="nav-list">
       <router-link  class="nav-list-item active" to="home">
         <i class="nbicon nblvsefenkaicankaoxianban-1"></i>
@@ -51,7 +51,6 @@ onMounted(() => {
     @import '../common/style/mixin';
     .nav-bar{
       position: fixed;
-      left: 0;
       bottom: 0;
       width: 100%;
       padding: 5px 0;

@@ -10,14 +10,14 @@
 
 <template>
   <div>
-    <header class="home-header wrap" :class="{'active' : state.headerScroll}">
+    <header class="home-header wrap" :class="{'active' : state.headerScroll}" style="max-width: 600px; margin: 0 auto;">
       <router-link tag="i" to="./category"><i class="nbicon nbmenu2"></i></router-link>
       <div class="header-search">
-        <span class="app-name">新蜂商城</span>
+        <span class="app-name">Factory Point</span>
         <i class="iconfont icon-search"></i>
-        <router-link tag="span" class="search-title" to="./product-list?from=home">山河无恙，人间皆安</router-link>
+        <router-link tag="span" class="search-title" to="./product-list?from=home">Shop 'til you drop</router-link>
       </div>
-      <router-link class="login" tag="span" to="./login" v-if="!state.isLogin">登录</router-link>
+      <router-link class="login" tag="span" to="./login" v-if="!state.isLogin">Login</router-link>
       <router-link class="login" tag="span" to="./user" v-else>
         <van-icon name="manager-o" />
       </router-link>
@@ -179,7 +179,6 @@ const tips = () => {
   @import '../common/style/mixin';
   .home-header {
       position: fixed;
-      left: 0;
       top: 0;
       .wh(100%, 50px);
       .fj();

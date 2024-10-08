@@ -9,7 +9,7 @@
 -->
 
 <template>
-  <header class="simple-header van-hairline--bottom">
+  <header class="simple-header van-hairline--bottom" style="max-width: 600px; margin: 0 auto;">
     <i v-if="!isback" class="nbicon nbfanhui" @click="goBack"></i>
     <i v-else>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i>
     <div class="simple-header-name">{{ name }}</div>
@@ -61,7 +61,6 @@ export default {
   .simple-header {
     position: fixed;
     top: 0;
-    left: 0;
     z-index: 10000;
     .fj();
     .wh(100%, 44px);

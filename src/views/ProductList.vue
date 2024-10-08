@@ -10,7 +10,7 @@
 
 <template>
   <div class="product-list-wrap">
-    <div class="product-list-content">
+    <div class="product-list-content" style="max-width: 600px; margin: 0 auto;">
       <header class="category-header wrap">
         <i class="nbicon nbfanhui" @click="goBack"></i>
         <div class="header-search">
@@ -131,7 +131,6 @@ const changeTab = ({ name }) => {
   @import '../common/style/mixin';
   .product-list-content {
     position: fixed;
-    left: 0;
     top: 0;
     width: 100%;
     z-index: 1000;

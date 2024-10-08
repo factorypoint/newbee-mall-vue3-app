@@ -39,7 +39,7 @@
         <div class="product-content" v-html="state.detail.goodsDetailContent || ''"></div>
       </div>
     </div>
-    <van-action-bar>
+    <van-action-bar style="max-width: 600px; margin: 0 auto;">
       <van-action-bar-icon icon="chat-o" text="客服" />
       <van-action-bar-icon icon="cart-o" :badge="!cart.count ? '' : cart.count" @click="goTo()" text="购物车" />
       <van-action-bar-button type="warning" @click="handleAddCart" text="加入购物车" />
