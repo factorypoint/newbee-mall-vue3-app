@@ -23,7 +23,7 @@
                 <span>x{{ item.goodsCount }}</span>
               </div>
               <div class="good-btn">
-                <div class="price">€{{ item.sellingPrice }}</div>
+                <div class="price">{{ item.sellingPrice }} €</div>
                 <van-stepper
                   integer
                   :min="1"

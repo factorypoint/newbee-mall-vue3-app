@@ -64,6 +64,14 @@
           :rules="[{ required: true, message: 'Enter a password' }]"
         />
         <van-field
+          v-model="state.confirm_password"
+          type="password"
+          name="confirm_password"
+          label="confirm password"
+          placeholder="confirm password"
+          :rules="[{ required: true, message: 'confirm a password' }]"
+        />
+        <van-field
           center
           clearable
           label="verification code"
@@ -95,6 +103,7 @@ const verifyRef = ref(null)
 const state = reactive({
   username: '',
   password: '',
+  confirm_password: "",
   username1: '',
   password1: '',
   type: 'login',
@@ -112,7 +121,7 @@ const toggle = (v) => {
 const onSubmit = async (values) => {
   state.imgCode = verifyRef.value.state.imgCode || ''
   if (state.verify.toLowerCase() != state.imgCode.toLowerCase()) {
-    showFailToast('verification code有误')
+    showFailToast('verification code failed')
     return
   }
   if (state.type == 'login') {
@@ -121,16 +130,26 @@ const onSubmit = async (values) => {
       "passwordMd5": md5(values.password)
     })
     setLocal('token', data)
+    showSuccessToast('Login successful')
     // 需要刷新页面，否则 axios.js 文件里的 token 不会被重置
     window.location.href = '/'
   } else {
-    await register({
+    if (state.confirm_password != state.password1) {
+      showFailToast('confirm password failed')
+      return
+    }
+
+    const { resultCode } = await register({
       "loginName": values.username1,
       "password": values.password1
     })
-    showSuccessToast('Login successful')
-    state.type = 'login'
-    state.verify = ''
+
+    if (resultCode == 200) {
+      toggle('login');
+      showSuccessToast('Regist successful')
+    } else {
+      showSuccessToast('Regist failed')
+    }
   }
 }
 </script>

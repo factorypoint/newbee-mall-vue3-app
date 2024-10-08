@@ -25,7 +25,7 @@
         </div>
         <div class="product-desc">Free delivery included</div>
         <div class="product-price">
-          <span>€{{ state.detail.sellingPrice || '' }}</span>
+          <span>{{ state.detail.sellingPrice || '' }} €</span>
           <!-- <span>库存203</span> -->
         </div>
       </div>

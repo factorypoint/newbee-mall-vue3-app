@@ -24,15 +24,21 @@
     showFailToast('Server error!')
      return Promise.reject(res)
    }
+
    if (res.data.resultCode != 200) {
-     if (res.data.message) showFailToast(res.data.message)
+     if (res.data.message) {
+      showFailToast(res.data.message)
+     }
+
      if (res.data.resultCode == 416) {
        router.push({ path: '/login' })
      }
+
      if (res.data.data && window.location.hash == '#/login') {
        setLocal('token', res.data.data)
        axios.defaults.headers['token'] = res.data.data
      }
+     
      return Promise.reject(res.data)
    }
  

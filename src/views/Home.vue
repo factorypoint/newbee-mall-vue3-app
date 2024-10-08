@@ -39,7 +39,7 @@
             <img :src="$filters.prefix(item.goodsCoverImg)" alt="">
             <div class="good-desc">
               <div class="title">{{ item.goodsName }}</div>
-              <div class="price">€ {{ item.sellingPrice }}</div>
+              <div class="price">{{ item.sellingPrice }} €</div>
             </div>
           </div>
         </div>
@@ -53,7 +53,7 @@
             <img :src="$filters.prefix(item.goodsCoverImg)" alt="">
             <div class="good-desc">
               <div class="title">{{ item.goodsName }}</div>
-              <div class="price">€ {{ item.sellingPrice }}</div>
+              <div class="price">{{ item.sellingPrice }} €</div>
             </div>
           </div>
         </div>
@@ -67,7 +67,7 @@
             <img :src="$filters.prefix(item.goodsCoverImg)" alt="">
             <div class="good-desc">
               <div class="title">{{ item.goodsName }}</div>
-              <div class="price">{{ item.sellingPrice }}€</div>
+              <div class="price">{{ item.sellingPrice }} €</div>
             </div>
           </div>
         </div>
@@ -120,7 +120,7 @@ const state = reactive({
       imgUrl: 'https://s.yezgea02.com/1604041127880/%E5%85%85%E5%80%BC%402x.png',
       categoryId: 100006
     }, {
-      name: 'From 9.99€',
+      name: 'From 1 €',
       imgUrl: 'https://s.yezgea02.com/1604041127880/9.9%402x.png',
       categoryId: 100007
     }, {

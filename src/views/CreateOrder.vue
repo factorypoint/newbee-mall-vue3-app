@@ -38,7 +38,7 @@
     <div class="pay-wrap">
       <div class="price">
         <span>Price tag</span>
-        <span>{{ total }}€</span>
+        <span>{{ total }} €</span>
       </div>
       <van-button @click="handleCreateOrder" class="pay-btn" color="#1baeae" type="primary" block>Create order</van-button>
     </div>

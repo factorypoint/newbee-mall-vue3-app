@@ -44,7 +44,7 @@
               <div class="product-info">
                 <p class="name">{{item.goodsName}}</p>
                 <p class="subtitle">{{item.goodsIntro}}</p>
-                <span class="price">€ {{item.sellingPrice}}</span>
+                <span class="price">{{item.sellingPrice}} €</span>
               </div>
             </div>
           </template>

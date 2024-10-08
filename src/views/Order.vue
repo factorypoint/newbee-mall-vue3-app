@@ -11,7 +11,7 @@
 <template>
   <div class="order-box">
     <s-header :name="'My orders'" :back="'/user'"></s-header>
-    <van-tabs @click-tab="onChangeTab" :color="'#80B9E4'" :title-active-color="'#80B9E4'" class="order-tab" v-model="state.status">
+    <van-tabs @click-tab="onChangeTab" :color="'#80B9E4'" :title-active-color="'#80B9E4'" class="order-tab" v-model="state.status" style="max-width: 600px; margin: 0 auto;">
       <van-tab title="All" name=''></van-tab>
       <van-tab title="Pending payment" name="0"></van-tab>
       <van-tab title="Pending" name="1"></van-tab>
