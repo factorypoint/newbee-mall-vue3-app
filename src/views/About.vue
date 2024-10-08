@@ -8,7 +8,7 @@
  *-->
  <template>
   <div class="about">
-    <s-header :name="'关于我们'"></s-header>
+    <s-header :name="'About us'"></s-header>
     <div class="about-body">
       <img class="intro-img" src="https://s.yezgea02.com/1604046067055/WechatIMG30231.jpeg" alt="">
       <van-divider :style="{ color: '#1baeae', borderColor: '#1baeae', fontSize: '20px', fontWeight: 500 }">简介</van-divider>

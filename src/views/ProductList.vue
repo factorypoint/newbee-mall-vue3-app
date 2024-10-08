@@ -20,12 +20,12 @@
             class="search-title"
             v-model="state.keyword"/>
         </div>
-        <span class="search-btn" @click="getSearch">搜索</span>
+        <span class="search-btn" @click="getSearch">Search</span>
       </header>
-      <van-tabs type="card" color="#80B9E4" @click-tab="changeTab" >
-        <van-tab title="推荐" name=""></van-tab>
-        <van-tab title="新品" name="new"></van-tab>
-        <van-tab title="价格" name="price"></van-tab>
+      <van-tabs type="card" color="#1baeae" @click-tab="changeTab" >
+        <van-tab title="Recommendations" name="recommendation"></van-tab>
+        <van-tab title="New products" name="new"></van-tab>
+        <van-tab title="Price" name="price"></van-tab>
       </van-tabs>
     </div>
     <div class="content">
@@ -33,7 +33,7 @@
         <van-list
           v-model:loading="state.loading"
           :finished="state.finished"
-          :finished-text="state.productList.length ? '没有更多了' : '搜索想要的商品'"
+          :finished-text="state.productList.length ? 'No more available products' : 'Search related items'"
           @load="onLoad"
           @offset="10"
         >
@@ -48,7 +48,7 @@
               </div>
             </div>
           </template>
-          <img class="empty" v-else src="https://s.yezgea02.com/1604041313083/kesrtd.png" alt="搜索">
+          <img class="empty" v-else src="https://s.yezgea02.com/1604041313083/kesrtd.png" alt="Search">
         </van-list>
       </van-pull-refresh>
     </div>

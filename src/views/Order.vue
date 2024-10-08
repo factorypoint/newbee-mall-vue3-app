@@ -10,21 +10,21 @@
 
 <template>
   <div class="order-box">
-    <s-header :name="'我的订单'" :back="'/user'"></s-header>
-    <van-tabs @click-tab="onChangeTab" :color="'#80B9E4'" :title-active-color="'#80B9E4'" class="order-tab" v-model="state.status" style="max-width: 600px; margin: 0 auto;">
-      <van-tab title="全部" name=''></van-tab>
-      <van-tab title="待付款" name="0"></van-tab>
-      <van-tab title="待确认" name="1"></van-tab>
-      <van-tab title="待发货" name="2"></van-tab>
-      <van-tab title="已发货" name="3"></van-tab>
-      <van-tab title="交易完成" name="4"></van-tab>
+    <s-header :name="'My orders'" :back="'/user'"></s-header>
+    <van-tabs @click-tab="onChangeTab" :color="'#80B9E4'" :title-active-color="'#80B9E4'" class="order-tab" v-model="state.status">
+      <van-tab title="All" name=''></van-tab>
+      <van-tab title="Pending payment" name="0"></van-tab>
+      <van-tab title="Pending" name="1"></van-tab>
+      <van-tab title="Pending delivery" name="2"></van-tab>
+      <van-tab title="Already delivered" name="3"></van-tab>
+      <van-tab title="Transaction completed" name="4"></van-tab>
     </van-tabs>
     <div class="content">
       <van-pull-refresh v-model="state.refreshing" @refresh="onRefresh" class="order-list-refresh">
         <van-list
           v-model:loading="state.loading"
           :finished="state.finished"
-          finished-text="没有更多了"
+          finished-text="There are no more items"
           @load="onLoad"
           @offset="10"
         >
@@ -38,7 +38,7 @@
               :key="one.orderId"
               :num="one.goodsCount"
               :price="one.sellingPrice"
-              desc="全场包邮"
+              desc="Delivery fee included"
               :title="one.goodsName"
               :thumb="$filters.prefix(one.goodsCoverImg)"
             />

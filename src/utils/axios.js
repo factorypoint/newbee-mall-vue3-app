@@ -21,7 +21,7 @@
  
  axios.interceptors.response.use(res => {
    if (typeof res.data !== 'object') {
-    showFailToast('服务端异常！')
+    showFailToast('Server error!')
      return Promise.reject(res)
    }
    if (res.data.resultCode != 200) {

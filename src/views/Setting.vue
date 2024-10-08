@@ -10,14 +10,14 @@
 
 <template>
   <div class="seting-box">
-    <s-header :name="'账号管理'"></s-header>
+    <s-header :name="'My account'"></s-header>
     <div class="input-item">
-      <van-field v-model="state.nickName" label="昵称" />
-      <van-field v-model="state.introduceSign" label="个性签名" />
-      <van-field v-model="state.password" type='password' label="修改密码" />
+      <van-field v-model="state.nickName" label="nickname" />
+      <van-field v-model="state.introduceSign" label="signature" />
+      <van-field v-model="state.password" type='password' label="Change password" />
     </div>
-    <van-button round class="save-btn" color="#80B9E4" type="primary" @click="save" block>保存</van-button>
-    <van-button round class="save-btn" color="#80B9E4" type="primary" @click="handleLogout" block>退出登录</van-button>
+    <van-button round class="save-btn" color="#1baeae" type="primary" @click="save" block>Save</van-button>
+    <van-button round class="save-btn" color="#1baeae" type="primary" @click="handleLogout" block>Logout</van-button>
   </div>
 </template>
 
